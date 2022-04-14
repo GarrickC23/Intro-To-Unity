@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     public Rigidbody2D myRigidBody;
+    public Animator myAnimator;
+    public AudioSource myAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,9 @@ public class Bird : MonoBehaviour
             //this.gameObject.transform.position += new Vector3(0, 5, 0);
             //myRigidBody.AddForce(new Vector2(0, 500));
             myRigidBody.velocity = new Vector2(0,5);
+
+            myAnimator.Play("Bird Jump");
+            myAudioSource.Play();
         }
     }
 }
